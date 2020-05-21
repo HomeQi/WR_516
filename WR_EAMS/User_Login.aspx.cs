@@ -55,7 +55,7 @@ namespace WR_EAMS
                             break;
                     }
                     Check_Login(userInfo);  //检查记住密码
-                    Response.Redirect("Main.aspx");//进入主界面
+                    Server.Transfer("Main.aspx");//进入主界面
                 }
                 else
                 {

@@ -12,12 +12,19 @@ namespace WR_EAMS
     public partial class Admin_Edit : System.Web.UI.Page
     {
         AdminManager adminManager = new AdminManager();
-        UserInfo user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["students"] == null && Session["teachers"] == null && Session["admin"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Server.Transfer("Login.aspx");
+            }
+            else
+            {
+                if (Session["admin"] == null)
+                {
+                    Response.Write("<script>top.location.href='Login.aspx?logout=-1'</script>");
+                }
             }
         }
 

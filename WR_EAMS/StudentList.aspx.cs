@@ -13,18 +13,25 @@ namespace WR_EAMS
     public partial class StudentList : System.Web.UI.Page
     {
         TeacherManager teacherManager = new TeacherManager();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["students"] == null && Session["teachers"] == null && Session["admin"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Server.Transfer("Login.aspx");
             }
             else
             {
-                if (!IsPostBack)
+                if (Session["teachers"] != null)
                 {
-                    IntitData();
+                    if (!IsPostBack)
+                    {
+                        IntitData();
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>top.location.href='Login.aspx?logout=-1'</script>");
                 }
             }
         }

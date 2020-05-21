@@ -17,32 +17,38 @@ namespace WR_EAMS
         {
             if (Session["students"] == null && Session["teachers"] == null && Session["admin"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Server.Transfer("Login.aspx");
             }
             else
             {
-                
-                if (Request["add"] == null)
+                if (Session["teachers"] != null && Session["admin"] != null)
                 {
-                    teacher = Session["teachers"] as Teacher;
-                    if (!IsPostBack)
+                    if (Request["add"] == null)
                     {
-                        txt_sId.Text = teacher.TId;
-                        txt_sName.Text = teacher.TName;
-                        ddl_gGender.Text = teacher.TGender;
-                        txt_sAge.Text = teacher.TAge.ToString();
-                        txt_Remark.InnerText = teacher.TRemark;
-                        image_Photo.ImageUrl = teacher.TPicture;
+                        teacher = Session["teachers"] as Teacher;
+                        if (!IsPostBack)
+                        {
+                            txt_sId.Text = teacher.TId;
+                            txt_sName.Text = teacher.TName;
+                            ddl_gGender.Text = teacher.TGender;
+                            txt_sAge.Text = teacher.TAge.ToString();
+                            txt_Remark.InnerText = teacher.TRemark;
+                            image_Photo.ImageUrl = teacher.TPicture;
+                        }
+                    }
+                    else
+                    {
+                        txt_sId.ReadOnly = false;
+                        Btn_Edit.Text = "确认添加";
                     }
                 }
                 else
                 {
-                    txt_sId.ReadOnly = false;
-                    Btn_Edit.Text = "确认添加";
+                    Response.Write("<script>top.location.href='Login.aspx?logout=-1'</script>");
                 }
             }
-            
-        }
+        }    
+        
 
         protected void Btn_Edit_Click(object sender, EventArgs e)
         {

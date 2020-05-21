@@ -17,29 +17,36 @@ namespace WR_EAMS
         {
             if (Session["students"] == null && Session["teachers"] == null && Session["admin"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Server.Transfer("Login.aspx");
             }
             else
             {
-                if (Request["add"] == null)
+                if (Session["students"] != null && Session["teachers"] != null)
                 {
-                    student = Session["students"] as Student;
-                    if (!IsPostBack)
+                    if (Request["add"] == null)
                     {
-                        txt_sId.Text = student.SId;
-                        txt_sName.Text = student.SName;
-                        ddl_gGender.Text = student.SGender;
-                        txt_sAge.Text = student.SAge.ToString();
-                        txt_Class.Text = student.SClass;
-                        txt_Remark.InnerText = student.SRemark;
-                        image_Photo.ImageUrl = student.SPicture;
-                        txt_Address.Text = student.SAddress;
+                        student = Session["students"] as Student;
+                        if (!IsPostBack)
+                        {
+                            txt_sId.Text = student.SId;
+                            txt_sName.Text = student.SName;
+                            ddl_gGender.Text = student.SGender;
+                            txt_sAge.Text = student.SAge.ToString();
+                            txt_Class.Text = student.SClass;
+                            txt_Remark.InnerText = student.SRemark;
+                            image_Photo.ImageUrl = student.SPicture;
+                            txt_Address.Text = student.SAddress;
+                        }
+                    }
+                    else
+                    {
+                        txt_sId.ReadOnly = false;
+                        Btn_Edit.Text = "确认添加";
                     }
                 }
                 else
                 {
-                    txt_sId.ReadOnly = false;
-                    Btn_Edit.Text = "确认添加";
+                    Response.Write("<script>top.location.href='Login.aspx?logout=-1'</script>");
                 }
             }
         }

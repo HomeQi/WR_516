@@ -26,14 +26,14 @@
         <div class="welinfo">
             <span>
                 <img src="images/sun.png" alt="天气" /></span>
-            <b>Admin早上好，欢迎使用信息管理系统</b>(admin@uimaker.com)
+            <b>尊敬的用户，欢迎使用武软信息管理系统</b>(Made By Mr.Wang)
     <a href="#">帐号设置</a>
         </div>
 
         <div class="welinfo">
             <span>
                 <img src="images/time.png" alt="时间" /></span>
-            <i>您上次登录的时间：2013-10-09 15:22</i> （不是您登录的？<a href="#">请点这里</a>）
+            <i>您上次登录的时间：xxxx:xx:xx </i> （不是您登录的？<a href="Pwd_Edit.aspx">请点这里</a>）
         </div>
 
         <div class="xline"></div>
@@ -41,22 +41,13 @@
         <ul class="iconlist">
 
             <li>
-                <img src="images/ico01.png" /><p><a href="#">管理设置</a></p>
+                <img src="images/ico01.png" /><p><a href="#">测试章节1</a></p>
             </li>
             <li>
-                <img src="images/ico02.png" /><p><a href="#">发布文章</a></p>
+                <img src="images/ico02.png" /><p><a href="#">测试章节2</a></p>
             </li>
             <li>
-                <img src="images/ico03.png" /><p><a href="#">数据统计</a></p>
-            </li>
-            <li>
-                <img src="images/ico04.png" /><p><a href="#">文件上传</a></p>
-            </li>
-            <li>
-                <img src="images/ico05.png" /><p><a href="#">目录管理</a></p>
-            </li>
-            <li>
-                <img src="images/ico06.png" /><p><a href="#">查询</a></p>
+                <img src="images/ico03.png" /><p><a href="#">测试章节3</a></p>
             </li>
 
         </ul>
@@ -70,7 +61,7 @@
         <div class="welinfo">
             <span>
                 <img src="images/dp.png" alt="提醒" /></span>
-            <b>Uimaker信息管理系统使用指南</b>
+            <b>信息管理系统使用指南</b>
         </div>
 
         <ul class="infolist">
@@ -81,7 +72,7 @@
 
         <div class="xline"></div>
 
-        <div class="uimakerinfo"><b>查看Uimaker网站使用指南，您可以了解到多种风格的B/S后台管理界面,软件界面设计，图标设计，手机界面等相关信息</b>(<a href="http://www.uimaker.com" target="_blank">www.uimaker.com</a>)</div>
+        <div class="uimakerinfo"><b>查看使用指南，您可以了解到多种风格的B/S后台管理界面,软件界面设计，图标设计，手机界面等相关信息</b>(<a href="http://www.retopstore.com" target="_blank">www.retopstore.com</a>)</div>
 
         <ul class="umlist">
             <li><a href="#">如何发布文章</a></li>

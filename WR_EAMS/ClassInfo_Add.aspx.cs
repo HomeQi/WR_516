@@ -17,7 +17,14 @@ namespace WR_EAMS
         {
             if (Session["students"] == null && Session["teachers"] == null && Session["admin"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Server.Transfer("Login.aspx");
+            }
+            else
+            {
+                if (Session["teachers"]==null)
+                {
+                    Response.Write("<script>top.location.href='Login.aspx?logout=-1'</script>");
+                }
             }
         }
 

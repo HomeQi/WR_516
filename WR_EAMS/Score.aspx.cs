@@ -19,17 +19,23 @@ namespace WR_EAMS
         {
             if (Session["students"] == null && Session["teachers"] == null && Session["admin"] == null)
             {
-                Response.Redirect("Login.aspx");
+                Server.Transfer("Login.aspx");
             }
             else
             {
-                student = Session["students"] as Student;
-                if (!IsPostBack)
+                if (Session["students"] != null)
                 {
-                    IntitData(student);
+                    student = Session["students"] as Student;
+                    if (!IsPostBack)
+                    {
+                        IntitData(student);
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>top.location.href='Login.aspx?logout=-1'</script>");
                 }
             }
-            
         }
 
         private void IntitData(Student student,string score="")
