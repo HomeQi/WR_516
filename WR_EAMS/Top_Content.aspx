@@ -67,11 +67,8 @@
         <li><a href="UserList.aspx" target="rightFrame">
             <img src="images/icon04.png" title="学生列表" /><h2>用户列表</h2>
         </a></li>
-        <li><a href="Score_Edit.aspx" target="rightFrame">
-            <img src="images/icon05.png" title="学生成绩" /><h2>学生成绩</h2>
-        </a></li>
         <li><a href="Pwd_Edit.aspx" target="rightFrame">
-            <img src="images/icon06.png" title="个人信息" /><h2>信息修改</h2>
+            <img src="images/icon05.png" title="学生成绩" /><h2>修改密码</h2>
         </a></li>
         <%}
         %>

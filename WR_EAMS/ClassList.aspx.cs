@@ -22,7 +22,7 @@ namespace WR_EAMS
             }
             else
             {
-                if (Session["students"] != null)
+                if (Session["teachers"] != null)
                 {
                     if (!IsPostBack)
                     {
