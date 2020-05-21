@@ -9,5 +9,5 @@ namespace WR_Model
 		public int TAge { get; set; }
 		public string TRemark { get; set; }
 		public string TPicture { get; set; }
-	}
+    }
 }

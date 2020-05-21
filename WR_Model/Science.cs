@@ -8,5 +8,6 @@ namespace WR_Model
 		public string SCredit { get; set; }
 		public string SCtime { get; set; }
 		public string Remark { get; set; }
-	}
+        public bool IsValid { get; set; }
+    }
 }

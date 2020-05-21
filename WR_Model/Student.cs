@@ -11,5 +11,5 @@ namespace WR_Model
 		public string SPicture { get; set; }
 		public string SClass { get; set; }
 		public string SAddress { get; set; }
-	}
+    }
 }
