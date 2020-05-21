@@ -21,7 +21,7 @@ namespace WR_EAMS
             }
             else
             {
-                if (Session["teachers"] != null && Session["admin"] != null)
+                if (Session["teachers"] != null || Session["admin"] != null)
                 {
                     if (Request["add"] == null)
                     {
