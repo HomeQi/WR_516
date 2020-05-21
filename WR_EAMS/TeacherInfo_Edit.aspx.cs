@@ -55,6 +55,7 @@ namespace WR_EAMS
             string ImgPath = FileUpload1.PostedFile.FileName;//获得文件名及路径
             string ImgName = ImgPath.Substring(ImgPath.LastIndexOf("\\") + 1);
             string ImgExtend = ImgPath.Substring(ImgPath.LastIndexOf(".") + 1);
+            string fileName = Guid.NewGuid().ToString() + "." + ImgExtend;
 
             Teacher editUser = new Teacher
             {
@@ -62,8 +63,7 @@ namespace WR_EAMS
                 TGender = ddl_gGender.Text.Trim(),
                 TName = txt_sName.Text.Trim(),
                 TAge = int.Parse(txt_sAge.Text.Trim()),
-                TRemark = txt_Remark.InnerText.Trim(),
-                TPicture = ImgPath
+                TRemark = txt_Remark.InnerText.Trim()
             };
             
             if (ImgPath == "")
@@ -80,24 +80,33 @@ namespace WR_EAMS
                     Label1.Text = "上传图片格式不正确！";
                     return;
                 }
-                string ServerPath = Server.MapPath("Img/") + ImgName;
+                string ServerPath = Server.MapPath("Img/") + fileName;
                 FileUpload1.PostedFile.SaveAs(ServerPath);
                 Label1.Text = "上传成功！图片名称为：" + ImgName;
-                string uPic = "Img/" + ImgName;
+                string uPic = "Img/" + fileName;
                 image_Photo.ImageUrl = uPic;
                 editUser.TPicture = uPic;
             }
             
             if (Request["add"] != null)
             {
-                if (userInfoManager.AddTeaInfo(editUser))
+                bool result = false;
+                try
                 {
-                    Response.Write("<script>alert('添加成功');</script>");
-                    Server.Transfer("TeacherList.aspx");
+                    result = userInfoManager.AddTeaInfo(editUser);
+                    if (result)
+                    {
+                        Response.Write("<script>alert('添加成功');</script>");
+                        Server.Transfer("TeacherList.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('添加失败,工号重复!');</script>");
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    Response.Write("<script>alert('添加失败,工号重复!');</script>");
+
                 }
             }
             else

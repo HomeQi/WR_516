@@ -67,7 +67,7 @@
 
             <asp:GridView ID="Students_gv" runat="server" AutoGenerateColumns="False" DataKeyNames="tId" CssClass="tablelist" AllowPaging="True" OnRowCancelingEdit="Students_gv_RowCancelingEdit" OnRowDeleting="Students_gv_RowDeleting" OnRowEditing="Students_gv_RowEditing" OnRowUpdating="Students_gv_RowUpdating" OnPageIndexChanging="Students_gv_PageIndexChanging">
                 <Columns>
-                    <asp:ImageField DataImageUrlField="tPicture" HeaderText="头像">
+                    <asp:ImageField DataImageUrlField="tPicture" HeaderText="头像" ReadOnly="true">
                     </asp:ImageField>
                     <asp:BoundField DataField="tId" HeaderText="教工号" ReadOnly="True" SortExpression="tId" />
                     <asp:BoundField DataField="tName" HeaderText="老师名" SortExpression="tName" />
