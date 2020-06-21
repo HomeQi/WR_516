@@ -24,7 +24,7 @@ namespace WR_DAL
             {
                 string sql = $@"select s.ID,s.sId,st.sName,st.sClass,sc.Course,s.sScore,
                                 sc.sCtime,sc.sCredit from Score s inner join Student st on s.sId=st.sId 
-                                inner join Science sc on s.Cno=sc.Cno where s.sId={sId}";
+                                inner join Science sc on s.Cno=sc.Cno where s.sId='{sId}'";
                 SqlCommand command = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table, "myTable");
@@ -44,7 +44,7 @@ namespace WR_DAL
             {
                 string sql = $@"select s.ID,s.sId,st.sName,st.sClass,sc.Course,s.sScore,
                                 sc.sCtime,sc.sCredit from Score s inner join Student st on s.sId=st.sId 
-                                inner join Science sc on s.Cno=sc.Cno where sc.cno={science} and s.sId={sId}";
+                                inner join Science sc on s.Cno=sc.Cno where sc.cno={science} and s.sId='{sId}'";
                 SqlCommand command = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table, "myTable");

@@ -52,7 +52,6 @@
                     <h2><%=item.Course %></h2>
                     <p>要求学时：<%=item.SCtime %><br />
                         本科学分：<%=item.SCredit %></p>
-                    <a class="enter" href="#">进入课程</a>
                 </div>
                 </li>
                 <%}

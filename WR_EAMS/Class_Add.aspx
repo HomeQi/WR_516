@@ -71,7 +71,7 @@
                 <span>
                     <img src="images/l04.png" /></span>
                 <h2><a href="#"><%=item.Course %></a></h2>
-                <p><a href="#">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>
                     <a href="Class_Add.aspx?cno=<%=item.Cno %>" onclick="return confirm('确认添加课程 -- <%=item.Course %>  ?')">添加</a></p>
             </li>
             <%}
